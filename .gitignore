@@ -1,0 +1,6 @@
+# User-specific files
+.vs/
+
+# Uncomment if you have tasks that create project's binaries
+# bin/
+# obj/
