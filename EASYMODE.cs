@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-
+using System.IO;
 namespace SOKOBAN_ASSESSMENT
 {
     class EASYMODE : Window
@@ -20,11 +20,18 @@ namespace SOKOBAN_ASSESSMENT
         private Border gridBorder { get; set; }
         public Grid appGrid { get; set; }
 
+        
         private PopulateGrid populatedGrid { get; set; }
-        public int penguinRow
-        
-        
-        { get; set; }
+        //public int wallRow { get; set; }
+        //public int wallColumn { get; set; }
+        public List<Tuple<int, int>> wallPositions = new List<Tuple<int, int>>();
+        public List<Tuple<int, int>> blankPositions = new List<Tuple<int, int>>();
+        public List<Tuple<int, int>> boxPositions = new List<Tuple<int, int>>();
+        public List<Tuple<int, int>> goalPositions = new List<Tuple<int, int>>();
+        public HashSet<(int, int)> reachedGoals = new HashSet<(int, int)>();
+
+
+        public int penguinRow { get; set; }
         public int penguinColumn { get; set; }
         public int boxRow { get; set; }
         public int boxColumn { get; set; }
